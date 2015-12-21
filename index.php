@@ -128,9 +128,9 @@ document.write(date + ", " + year);
 
 <?php
 
-$user="root";
+$user="tim";
 $host="mysql";
-$password="KvRl2BlhSAM-";
+$password="tim";
 $database="recipes";
 
 $connection = mysqli_connect($host,$user,$password) or die ("couldn't connect to this server");
