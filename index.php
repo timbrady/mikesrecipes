@@ -10,6 +10,7 @@
  	  
 ?>
 
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -70,10 +71,9 @@ $(function() {
 	
 </head>
 <body>
+	
 <center>
 <img src=/images/mikehome.jpg>
-
-
 <br><br>
 <p>
 
@@ -98,7 +98,8 @@ echo "<font face=arial><b>Welcome, {$_SESSION['logname']} ";
 ?>
 
 <b>Recently added Recipes</b> (Today is
-<SCRIPT LANGUAGE="JavaScript1.2">
+
+<SCRIPT>
 <!-- Begin
 var months=new Array(13);
 months[1]="January";
@@ -124,9 +125,7 @@ document.write(date + ", " + year);
 // End -->
 </SCRIPT>
 
-</head><body>
-
-<br><br>
+) <br><br>
 
 
 <?php
