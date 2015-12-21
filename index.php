@@ -129,7 +129,7 @@ document.write(date + ", " + year);
 <?php
 
 $user="root";
-$host="localhost:3306";
+$host="mysql";
 $password="KvRl2BlhSAM-";
 $database="recipes";
 
