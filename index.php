@@ -128,15 +128,14 @@ document.write(date + ", " + year);
 
 <?php
 
-$user="tim";
-$host="mysql";
-$password="tim";
+$user="root";
+$host="localhost:3306";
+$password="KvRl2BlhSAM-";
+//$password="edtech";
 $database="recipes";
 
-$connection = mysqli_connect($host,$user,$password) or die ("couldn't connect to this server");
-$db = mysqli_select_db($connection,$database) or die ("couldn't connect to the database");
-
-
+$connection = mysql_connect($host,$user,$password) or die ("couldn't connect to this server");
+$db = mysql_select_db($database,$connection) or die ("couldn't connect to the database");
 
 $query = "SELECT COUNT(title) FROM recipeTable";
 $result = mysqli_query($connection,$query) or die("couldn't execute query");
