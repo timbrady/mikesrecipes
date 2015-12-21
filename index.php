@@ -99,7 +99,7 @@ echo "<font face=arial><b>Welcome, {$_SESSION['logname']} ";
 
 <b>Recently added Recipes</b> (Today is
 
-<SCRIPT>
+<script>
 <!-- Begin
 var months=new Array(13);
 months[1]="January";
@@ -123,17 +123,20 @@ year = year + 1900;
 document.write(lmonth + " ");
 document.write(date + ", " + year);
 // End -->
-</SCRIPT>
-
-) <br><br>
+</SCRIPT>) <br><br>
 
 
 <?php
 
-require "db_login.inc";
+$user="root";
+$host="localhost:3306";
+$password="KvRl2BlhSAM-";
+$database="recipes";
 
 $connection = mysqli_connect($host,$user,$password) or die ("couldn't connect to the server");
 $db = mysqli_select_db($connection,$database) or die ("couldn't connect to the database");
+
+
 
 $query = "SELECT COUNT(title) FROM recipeTable";
 $result = mysqli_query($connection,$query) or die("couldn't execute query");
