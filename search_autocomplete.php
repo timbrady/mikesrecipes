@@ -2,10 +2,7 @@
 
 	$q = $_GET["term"];
 	
-    $user="root";
-    $host="localhost:3306";
-    $password="KvRl2BlhSAM-";
-    $database="recipes";
+    require "db_login.inc";
 
 	$connection = mysql_connect($host,$user,$password) or die ("couldn't connect to the server");
 	$db = mysql_select_db($connection,$database) or die ("couldn't connect to the database");

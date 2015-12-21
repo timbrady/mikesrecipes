@@ -2,14 +2,15 @@
 session_start();
 $user="root";
 $host="localhost:3306";
-$password="KvRl2BlhSAM-";
+$password="edtech";
+//$password="KvRl2BlhSAM-";
 $database="MemberDirectory";
 
   switch (@$_GET['do'])                                   
   {
     case "login":                                        
      $connection = mysql_connect($host,$user,$password)
-               or die ("Couldn't connect to server.");
+               or die ("Couldn't connect to this server.");
       $db = mysql_select_db($database, $connection)
                or die ("Couldn't select database.");  
 

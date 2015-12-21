@@ -15,7 +15,7 @@ echo "</td></tr>";
 echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 width=100%></td></tr></table><br>";
 
 
-include("recipe_login.inc");
+require "db_login.inc";
 
   $connection = mysql_connect($host,$user,$password)
        or die ("couldn't connect to server");

@@ -12,6 +12,10 @@
 
 <title>Mike's Recipes</title>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+
+<body>
+	
 <script>
 function showHint(str)
 {
@@ -32,16 +36,13 @@ function showHint(str)
     xmlhttp.send();
 }
 </script>
-</head>
-<body>
+
 
 <?php
-$user="root";
-$host="localhost:3306";
-$password="KvRl2BlhSAM-";
-$database="recipes";
 
-$connection = mysql_connect($host,$user,$password) or die ("couldn't     connect to the server");
+require "db_login.inc";
+
+$connection = mysql_connect($host,$user,$password) or die ("couldn't connect to the server");
 $db = mysql_select_db($database,$connection) or die ("couldn't connect to  the database");
 
     $value = $_GET["search"];

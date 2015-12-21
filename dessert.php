@@ -1,4 +1,7 @@
- <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"></head><body>
+<DOCTYPE html> 
+<html><head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head><body>
 
 <?php
   session_start();  
@@ -8,15 +11,10 @@
      exit();
   }
 
-$user="tim";
-$host="mysql";
-$password="tim";
-$database="recipes";
+require "db_login.inc";
 
-$connection = mysql_connect($host,$user,$password) or die ("couldn't     connect to the server");
+$connection = mysql_connect($host,$user,$password) or die ("couldn't connect to the server");
 $db = mysql_select_db($database,$connection) or die ("couldn't connect to  the database");
-
-
 
 echo "<table border=0 width=100%><tr><td align=left>";
 echo "<img src=/images/small_graphic.jpg></td><td align=right>";

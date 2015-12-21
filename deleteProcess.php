@@ -22,7 +22,7 @@ echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 widt
 
 echo "<h2>Delete a Recipe</h2>";
 
-include("recipe_login.inc");
+require "db_login.inc";
 
   $connection = mysql_connect($host,$user,$password) or die ("couldn't connect to server");
   $db = mysql_select_db($database,$connection) or die ("Couldn't select database");
