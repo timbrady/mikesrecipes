@@ -122,7 +122,9 @@ year = year + 1900;
 document.write(lmonth + " ");
 document.write(date + ", " + year);
 // End -->
-</SCRIPT>)
+</SCRIPT>
+
+</head><body>
 
 <br><br>
 
