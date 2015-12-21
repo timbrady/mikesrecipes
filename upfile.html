@@ -1,0 +1,19 @@
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"></head><body>
+
+<table border=0 width=100%><tr><td align=left>
+<img src=/images/small_graphic.jpg></td><td align=right>
+Recipes: <a href=upfile.html>Add</a> , <a href=delete_start.html>Delete</a> , <a href=edit_start.html>Edit</a>
+</td></tr>
+<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 width=100%></td></tr></table><br>
+<h2>Add a Recipe</h2>
+
+Upload a recipe file from your local hard drive:<br>
+<form method="POST" enctype="multipart/form-data" action="uploadFile.php">
+<input type="hidden" name="MAX_FILE_SIZE" value="100000">
+<input type="file" name="user_file" size="50">
+<input type="submit" value="Upload File">
+</form>
+<br>
+<a href=index.php>Return to Home Page</a>
+
+</body></html>
