@@ -138,8 +138,8 @@ $connection = mysql_connect($host,$user,$password) or die ("couldn't connect to 
 $db = mysql_select_db($database,$connection) or die ("couldn't connect to the database");
 
 $query = "SELECT COUNT(title) FROM recipeTable";
-$result = mysqli_query($connection,$query) or die("couldn't execute query");
-$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$result = mysql_query($query) or die("couldn't execute query");
+$row = mysql_fetch_array($result,MYSQL_ASSOC);
     
 
 foreach ($row as $row_num => $num_value)
@@ -150,9 +150,9 @@ $latest = $num_value-5;
 echo "<ul>"; 
 
 $query = "SELECT * FROM recipeTable ORDER BY date_entered LIMIT $latest,5";
-$result = mysqli_query($connection,$query) or die("couldn't execute query");
+$result = mysql_query($query) or die("couldn't execute query");
 
-while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
+while ($row = mysql_fetch_array($result,MYSQL_ASSOC))
 {
 EXTRACT($row);
 echo "<li><font size=+1><a href=/recipes/"; echo "$wordfile"; echo">$title</a></font><br>";
