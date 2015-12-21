@@ -7,9 +7,8 @@
      header("Location: login.php");
      exit();
   }
+ 	  
 ?>
-
-
 
 <html>
 <head>
@@ -19,31 +18,15 @@
   <link rel="stylesheet" href="../jscript/jquery-ui-1.11.4/themes/smoothness/jquery-ui.css">
   <script src="../jscript/jquery-1.11.1.js"></script>
   <script src="../jscript/jquery-ui-1.11.4/jquery-ui.js"></script>
-
-<!--
-
-<script>
-    function showHint(str)
-    {
-        if (str.length==0)
-        {
-            document.getElementById("txtHint").innerHTML="";
-            return;
-        }
-        var xmlhttp=new XMLHttpRequest();
-        xmlhttp.onreadystatechange=function()
-        {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-                document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-            }
-        }
-        xmlhttp.open("GET","livesearch.php?q="+str,true);
-        xmlhttp.send();
-    }
-</script>
-	-->
   
+  <style>
+	
+  	.bold-text {
+  	    font-weight: bold;
+  		text-decoration: none;
+  	}
+  </style>
+
   
 <script>
 $(function() {
@@ -95,9 +78,12 @@ $(function() {
 <p>
 
 <form action="search.php" method="GET" autocomplete="off">
-	<div class="ui-widget"><input id="search" type="text" name="search" size="65" autocomplete="off" autofocus>
+
+<div class="ui-widget"><input id="search" type="text" name="search" size="65" autocomplete="off" autofocus>
         <input type="hidden" name="num" value="0">
-        <input type="submit" value="submit"> </div> <a href="upfile.html">Add a Recipe</a> 
+        <input type="submit" value="submit"> </div> 
+		
+		<a href="upfile.html">Add a Recipe</a> 
 </form>
 </center>
 <br>
@@ -145,12 +131,12 @@ document.write(date + ", " + year);
 
 require "db_login.inc";
 
-$connection = mysql_connect($host,$user,$password) or die ("couldn't     connect to the server");
-$db = mysql_select_db($database,$connection) or die ("couldn't connect to the database");
+$connection = mysqli_connect($host,$user,$password) or die ("couldn't connect to the server");
+$db = mysqli_select_db($connection,$database) or die ("couldn't connect to the database");
 
 $query = "SELECT COUNT(title) FROM recipeTable";
-$result = mysql_query($query) or die("couldn't execute query");
-$row = mysql_fetch_array($result,MYSQL_ASSOC);
+$result = mysqli_query($connection,$query) or die("couldn't execute query");
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     
 
 foreach ($row as $row_num => $num_value)
@@ -161,9 +147,9 @@ $latest = $num_value-5;
 echo "<ul>"; 
 
 $query = "SELECT * FROM recipeTable ORDER BY date_entered LIMIT $latest,5";
-$result = mysql_query($query) or die("couldn't execute query");
+$result = mysqli_query($connection,$query) or die("couldn't execute query");
 
-while ($row = mysql_fetch_array($result,MYSQL_ASSOC))
+while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
 {
 EXTRACT($row);
 echo "<li><font size=+1><a href=/recipes/"; echo "$wordfile"; echo">$title</a></font><br>";
