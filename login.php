@@ -3,7 +3,8 @@ session_start();
 $user="root";
 $host="localhost:3306";
 //$password="edtech";
-$password="KvRl2BlhSAM-";
+//$password="KvRl2BlhSAM-";
+$password="CyZ6428JsMxp";
 $database="MemberDirectory";
 
   switch (@$_GET['do'])                                   
