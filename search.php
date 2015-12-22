@@ -66,7 +66,12 @@ $(function() {
      exit();
   }
 
-include '../includes/db_login.inc';
+  $user="root";
+  $host="localhost:3306";
+  //$password="KvRl2BlhSAM-";
+  $password="CyZ6428JsMxp";
+  //$password="edtech";
+  $database="recipes";
 
 $connection = mysql_connect($host,$user,$password) or die ("couldn't connect to the server");
 $db = mysql_select_db($database,$connection) or die ("couldn't connect to the database");
