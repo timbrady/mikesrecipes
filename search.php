@@ -1,3 +1,12 @@
+<? php
+  session_start();  
+  if (@$_SESSION['auth'] != "yes")                   
+  {
+     header("Location: login.php");
+     exit();
+  }
+ ?>
+
 <!DOCTYPE html>
 <html><head>
 <title>Mike's Recipes</title>
@@ -58,14 +67,9 @@ $(function() {
 </head>
 <body>
 
-<?php
-  session_start();  
-  if (@$_SESSION['auth'] != "yes")                   
-  {
-     header("Location: login.php");
-     exit();
-  }
 
+  <? php
+  
   $user="root";
   $host="localhost:3306";
   //$password="KvRl2BlhSAM-";
@@ -133,7 +137,7 @@ echo "<a href='searchprocess3.php?search=";echo"$value";echo"&num=";echo"$nextco
 ?>
 
 <form action="search.php" method="GET" autocomplete="off">
-<div class="ui-widget"><input id="search" type="text" name="search" size="65" autocomplete="off" autofocus>
+<div class="ui-widget"><input id="search" type="text" name="search" size="65" autocomplete="off">
         <input type="hidden" name="num" value="0">
         <input type="submit" value="submit"> </div> 
 </form><br>
