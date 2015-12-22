@@ -1,4 +1,4 @@
-<? php
+<?php
   session_start();  
   if (@$_SESSION['auth'] != "yes")                   
   {
@@ -68,7 +68,7 @@ $(function() {
 <body>
 
 
-  <? php
+<?php
   
   $user="root";
   $host="localhost:3306";
@@ -96,7 +96,7 @@ $db = mysql_select_db($database,$connection) or die ("couldn't connect to the da
 	echo "&num="; 
 	echo "$count"; 
 	echo "'>Edit</a></td></tr>
-	<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 width=100%></td></tr></table><br>";
+	<tr><td colspan=2 width=100%><img src='/images/blue_pixel.jpg' height=2 width=100%></td></tr></table><br>";
 
     $counterstart = $count;
     $counter = 0;
