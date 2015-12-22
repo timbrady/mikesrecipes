@@ -69,7 +69,7 @@ $(function() {
 
 <?php
 
-require "db_login.inc";
+require "../includes/db_login.inc";
 
 $connection = mysqli_connect($host,$user,$password) or die ("couldn't connect to the server");
 $db = mysqli_select_db($connection,$database) or die ("couldn't connect to the database");
