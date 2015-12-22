@@ -1,15 +1,3 @@
-
-<?php
-
-  session_start();                                          
-  if (@$_SESSION['auth'] != "yes")                        
-  {
-     header("Location: login.php");
-     exit();
-  }
- 	  
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,6 +79,14 @@ $(function() {
 
 
 <?php
+
+  session_start();                                          
+  if (@$_SESSION['auth'] != "yes")                        
+  {
+     header("Location: login.php");
+     exit();
+  }
+ 	  
 
 /*
 echo "<font face=arial><b>Welcome, {$_SESSION['logname']} ";

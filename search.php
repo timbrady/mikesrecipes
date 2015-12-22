@@ -1,12 +1,3 @@
-<?php
-  session_start();  
-  if (@$_SESSION['auth'] != "yes")                   
-  {
-     header("Location: login.php");
-     exit();
-  }
-?>
-
 <!DOCTYPE html>
 <html><head>
 <title>Mike's Recipes</title>
@@ -68,6 +59,12 @@ $(function() {
 <body>
 
 <?php
+  session_start();  
+  if (@$_SESSION['auth'] != "yes")                   
+  {
+     header("Location: login.php");
+     exit();
+  }
 
 require "../includes/db_login.inc";
 
