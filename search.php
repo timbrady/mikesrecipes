@@ -68,8 +68,8 @@ $(function() {
 
 require "../includes/db_login.inc";
 
-$connection = mysqli_connect($host,$user,$password) or die ("couldn't connect to the server");
-$db = mysqli_select_db($connection,$database) or die ("couldn't connect to the database");
+$connection = mysql_connect($host,$user,$password) or die ("couldn't connect to the server");
+$db = mysql_select_db($database,$connection) or die ("couldn't connect to the database");
 
     $value = $_GET["search"];
     $count = $_GET["num"];
@@ -101,8 +101,8 @@ $db = mysqli_select_db($connection,$database) or die ("couldn't connect to the d
     $query = "SELECT title, abstract, wordfile, ((3 *(MATCH (title) AGAINST ('$value')))+(MATCH (abstract) AGAINST ('$value'))) AS score FROM recipeTable WHERE MATCH (title,abstract,wordfile,purpose,keywords) AGAINST ('$value') ORDER BY score DESC";
     
     
-    $result = mysqli_query($connection,$query) or die("couldn't execute query");
-    while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
+    $result = mysql_query($query) or die("couldn't execute query");
+    while ($row = mysql_fetch_array($result,MYSQL_ASSOC))
     {
         EXTRACT($row);
         $counter = $counter +1;
