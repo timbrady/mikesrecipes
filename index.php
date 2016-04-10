@@ -123,12 +123,7 @@ document.write(date + ", " + year);
 
 <?php
 
-$user="root";
-$host="localhost:3306";
-//$password="KvRl2BlhSAM-";
-$password="CyZ6428JsMxp";
-//$password="edtech";
-$database="recipes";
+require "recipe_login.inc";
 
 $connection = mysqli_connect($host,$user,$password) or die ("couldn't connect to this server");
 $db = mysqli_select_db($connection,$database) or die ("couldn't connect to the database");

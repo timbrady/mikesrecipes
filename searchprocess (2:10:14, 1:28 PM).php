@@ -18,7 +18,7 @@ Recipes: <a href=upfile.html>Add</a> , <a href=delete_start.html>Delete</a> , <a
 
 <?php
 
-require "db_login.inc";
+require "recipe_login.inc";
 
 $connection = mysql_connect($host,$user,$password) or die ("couldn't     connect to the server");
 $db = mysql_select_db($database,$connection) or die ("couldn't connect to  the database");

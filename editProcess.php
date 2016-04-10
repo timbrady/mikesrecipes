@@ -11,7 +11,7 @@ echo "</td></tr>";
 echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 width=100%></td></tr></table><br>";
 echo "<h2>Edit a Recipe</h2>";
 
-include("recipe_login.inc");
+require "recipe_login.inc";
 
   $connection = mysql_connect($host,$user,$password) or die ("couldn't connect to server");
   $db = mysql_select_db($database,$connection) or die ("Couldn't select database");

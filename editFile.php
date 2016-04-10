@@ -6,7 +6,7 @@ echo "<html>
       <head><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'><title>Upload Form</title></head>
       <body>";
 
-include("recipe_login.inc");
+ require "recipe_login.inc";
 
   $connection = mysql_connect($host,$user,$password)
        or die ("couldn't connect to server");

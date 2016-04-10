@@ -20,7 +20,7 @@ echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 widt
 
 echo "<h2>Delete a Recipe</h2>";
 
-require "db_login.inc";
+require "recipe_login.inc";
 
   $connection = mysql_connect($host,$user,$password)
        or die ("couldn't connect to server");
