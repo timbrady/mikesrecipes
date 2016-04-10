@@ -45,7 +45,7 @@ echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 widt
     $destination = "/recipes/$final_name";
     $temp_file = $_FILES['user_file']['tmp_name'];
     chmod($temp_file , 0777);
-	echo "$temp_file $destination";
+	echo "$temp_file<br>$destination";
     $desty = move_uploaded_file($temp_file,$destination);
     if ($desty == TRUE)
     {
