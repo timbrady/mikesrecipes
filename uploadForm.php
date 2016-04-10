@@ -15,7 +15,7 @@ echo "</td></tr>";
 echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 width=100%></td></tr></table><br>";
 
 
-require "db_login.inc";
+require "recipe_login.inc";
 
   $connection = mysql_connect($host,$user,$password)
        or die ("couldn't connect to server");
@@ -34,6 +34,7 @@ require "db_login.inc";
     $kvalue = $_POST['keywords'];
     $dvalue = date("Y-m-d");
     $query = "insert into recipeTable (title, wordfile, purpose, abstract, keywords, date_entered) values('$tvalue','$wfvalue','$pvalue','$abvalue','$kvalue','$dvalue')";
+	echo "$query<br>";
     $result = mysql_query($query) or die ("couldn't execute query.");
     echo "<b>The following recipe has been uploaded</b><br>";
     echo "Title: $tvalue<br>";
