@@ -26,7 +26,7 @@ echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 widt
    else
     {
     $name = $_FILES['user_file']['name'];
-	$test = is_uploaded_file ($name); echo "$test<br>"
+	$test = is_uploaded_file ($name); echo "$test<br>";
     $name2 = str_replace("è","e",$name);
     $name2 = str_replace("é","e",$name2);
     $name2 = str_replace("ê","e",$name2);
