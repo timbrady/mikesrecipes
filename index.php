@@ -67,8 +67,7 @@ $(function() {
   </script>	
 	
 </head>
-<body>
-	
+<body>testtube
 <center>
 <img src=/images/mikehome.jpg>
 <br><br>
@@ -154,7 +153,7 @@ if ($abstract == "")
 
 echo "</ul>";
 
-echo "testtube"; 
+
 echo "Find recipes added in: ";
 echo " <a href='searchrecent.php?recent=10'>Last 10 days</a> ";
 echo " , <a href='searchrecent.php?recent=30'>Last 30 days</a> ";
