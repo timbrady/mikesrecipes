@@ -67,7 +67,7 @@ $(function() {
   </script>	
 	
 </head>
-<body>testtube
+<body>
 <center>
 <img src=/images/mikehome.jpg>
 <br><br>
