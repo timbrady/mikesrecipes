@@ -25,8 +25,12 @@ echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 widt
 
    else
     {
+    $temp_file = $_FILES['user_file']['tmp_name'];
+	$error = $_FILES['user_file']['error'];
+	echo "$error<br>";
+	$size = $_FILES['user_file']['size'];
+	echo "$size<br>";
     $name = $_FILES['user_file']['name'];
-	$test = is_uploaded_file ($name); echo "$test<br>";
     $name2 = str_replace("è","e",$name);
     $name2 = str_replace("é","e",$name2);
     $name2 = str_replace("ê","e",$name2);
@@ -36,14 +40,12 @@ echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 widt
     $name2 = trim($name2);
     $lc_name = strtolower($name2);
     $c_name = ucwords($lc_name);
- 
     $final_name1 = str_replace("'","",$c_name);
     $final_name = ereg_replace(" ","_",$final_name1);
 
     $final_title = ereg_replace(".doc","",$final_name1);
 
-    $destination = "/recipes/$final_name";
-    $temp_file = $_FILES['user_file']['tmp_name'];
+    $destination = "recipes/$final_name";
     chmod($temp_file , 0777);
 	echo "$temp_file<br>$destination";
     $desty = move_uploaded_file($temp_file,$destination);
