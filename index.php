@@ -154,7 +154,7 @@ if ($abstract == "")
 
 echo "</ul>";
 
-echo "test"; 
+echo "testtube"; 
 echo "Find recipes added in: ";
 echo " <a href='searchrecent.php?recent=10'>Last 10 days</a> ";
 echo " , <a href='searchrecent.php?recent=30'>Last 30 days</a> ";
