@@ -22,7 +22,6 @@ echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 widt
     include("upfile.inc");
     exit();
     }
-
    else
     {
     $temp_file = $_FILES['user_file']['tmp_name'];
@@ -45,7 +44,7 @@ echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 widt
 
     $final_title = ereg_replace(".doc","",$final_name1);
 
-    $destination = "recipes/$final_name";
+    $destination = "/recipes/$final_name";
     chmod($temp_file , 0777);
 	echo "$temp_file<br>$destination";
     $desty = move_uploaded_file($temp_file,$destination);
