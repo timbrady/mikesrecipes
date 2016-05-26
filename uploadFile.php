@@ -29,7 +29,7 @@ echo "<tr><td colspan=2 width=100%><img src=/images/blue_pixel.jpg height=2 widt
 	$error = $_FILES['user_file']['error'];
 	echo "$error<br>";
 	$size = $_FILES['user_file']['size'];
-	echo "$size<br>";
+	echo "SIZE $size<br>";
     $name = $_FILES['user_file']['name'];
     $name2 = str_replace("è","e",$name);
     $name2 = str_replace("é","e",$name2);
